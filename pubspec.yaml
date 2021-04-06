@@ -1,0 +1,42 @@
+name: lungs_pneumonia
+description: A Mobile Application Developed for Diagnosis of Lungs Pneumonia
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  curved_navigation_bar: ^0.3.2
+  path_provider: ^1.6.1
+  cupertino_icons: ^0.1.2
+  tflite: ^1.0.4
+  image_picker: ^0.6.2+3
+  image: ^2.1.4
+  circular_bottom_navigation: ^1.0.1
+  flutter_launcher_icons:
+  url_launcher:
+  font_awesome_flutter:
+
+
+flutter_icons:
+  image_path: "assets/images/logo.jpg"  
+  ios: true
+  android: true
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/home_background.png 
+    - assets/images/splashScreen.png
+    - assets/images/back1.png
+    - assets/images/logo.jpg
+    - assets/tflite/model_unquant2.tflite
+    - assets/tflite/labels2.txt
