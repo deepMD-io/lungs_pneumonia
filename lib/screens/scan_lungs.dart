@@ -64,7 +64,10 @@ class _OpenGalleryState extends State<OpenGallery> {
                   ),
                   _outputs != null
                       ? Text(
-                          "Result: " + "${_outputs[0]["label"]}",
+                          "Result: " +
+                              "${_outputs[0]["label"]}" +
+                              "\nConfidence:" +
+                              "${_outputs[0]["confidence"].toStringAsFixed(2)}",
                           style: TextStyle(
                             color: Color(_color),
                             fontSize: 22,
