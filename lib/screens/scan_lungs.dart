@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -70,14 +69,12 @@ class _OpenGalleryState extends State<OpenGallery> {
                             color: Color(_color),
                             fontSize: 22,
                             fontWeight: FontWeight.w600,
-                            // background: Paint()..color = Colors.transparent,
                           ),
                         )
                       : Container()
                 ],
               ),
               decoration: BoxDecoration(
-                // color: Colors.red[200],
                 image: new DecorationImage(
                     image: new AssetImage("assets/images/back1.png"),
                     fit: BoxFit.cover),
