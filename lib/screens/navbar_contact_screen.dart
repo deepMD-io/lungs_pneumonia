@@ -78,7 +78,7 @@ Widget contactPage(BuildContext context) {
                   leading: new Icon(Icons.local_post_office,
                       color: Colors.orange, size: 30),
                   title: new Text(
-                    "info@yazilimkaravani.net",
+                    "support@yazilimkaravani.net",
                     style: new TextStyle(fontSize: 14, color: Colors.grey[800]),
                   ),
                   subtitle: Text("Write us on e-mail"),

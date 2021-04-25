@@ -72,6 +72,7 @@ class _NavbarPageState extends State<NavbarPage> {
       controller: _navigationController,
       barHeight: bottomNavBarHeight,
       barBackgroundColor: Colors.orange,
+      normalIconColor: Colors.white54,
       animationDuration: Duration(milliseconds: 300),
       selectedCallback: (int selectedPos) {
         setState(() {

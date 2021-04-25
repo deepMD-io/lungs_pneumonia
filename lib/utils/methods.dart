@@ -10,7 +10,7 @@ siteyeGit(url) async {
 
 mailGonder() async {
   var url = 'mailto:' +
-      'info@yazilimkaravani.net' +
+      'support@yazilimkaravani.net' +
       '?subject=SUPPORT | Pneumonia Detection&body=';
   if (await canLaunch(url)) {
     await launch(url);
