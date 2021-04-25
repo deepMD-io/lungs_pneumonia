@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
-import 'screens/launch_page.dart';
+import 'package:lungs_pneumonia/widgets/navbar_widget.dart';
+import 'package:lungs_pneumonia/screens/intro_screen.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
+  runApp(MaterialApp(
+    color: Colors.orange,
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+    routes: {
+      '/navbar': (context) => NavbarPage(),
+    },
+  ));
 }
 
 class MyApp extends StatefulWidget {
@@ -14,8 +22,9 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+    Future.delayed(Duration(seconds: 2), () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => OnBoardingPage()));
     });
   }
 

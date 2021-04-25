@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
-class OpenGallery extends StatefulWidget {
+class ScanPage extends StatefulWidget {
   @override
-  _OpenGalleryState createState() => _OpenGalleryState();
+  _ScanPageState createState() => _ScanPageState();
 }
 
-class _OpenGalleryState extends State<OpenGallery> {
+class _ScanPageState extends State<ScanPage> {
   List _outputs;
   File _image;
   bool _loading = false;
@@ -31,7 +31,8 @@ class _OpenGalleryState extends State<OpenGallery> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        elevation: 0,
+        backgroundColor: Colors.orange,
         centerTitle: true,
         title: const Text(
           'Scan Photo from Gallery',
@@ -39,14 +40,16 @@ class _OpenGalleryState extends State<OpenGallery> {
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w900,
-            color: Color(0xfff7941d),
+            color: Colors.white,
           ),
         ),
       ),
       body: _loading
           ? Container(
               alignment: Alignment.center,
-              child: CircularProgressIndicator(),
+              child: CircularProgressIndicator(
+                backgroundColor: Colors.orange,
+              ),
             )
           : Container(
               width: MediaQuery.of(context).size.width,
@@ -55,10 +58,13 @@ class _OpenGalleryState extends State<OpenGallery> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   _image == null
-                      ? Container()
-                      : Image.file(_image,
+                      ? notscanyet()
+                      : Image.file(
+                          _image,
                           color: Colors.grey,
-                          colorBlendMode: BlendMode.saturation),
+                          colorBlendMode: BlendMode.saturation,
+                          scale: 2,
+                        ),
                   SizedBox(
                     height: 20,
                   ),
@@ -66,7 +72,7 @@ class _OpenGalleryState extends State<OpenGallery> {
                       ? Text(
                           "Result: " +
                               "${_outputs[0]["label"]}" +
-                              "\nConfidence:" +
+                              "\nConfidence: " +
                               "${_outputs[0]["confidence"].toStringAsFixed(2)}",
                           style: TextStyle(
                             color: Color(_color),
@@ -79,16 +85,24 @@ class _OpenGalleryState extends State<OpenGallery> {
               ),
               decoration: BoxDecoration(
                 image: new DecorationImage(
-                    image: new AssetImage("assets/images/back1.png"),
+                    image: new AssetImage("assets/images/background.png"),
                     fit: BoxFit.cover),
               ),
             ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: pickImage,
         icon: Icon(Icons.remove_red_eye),
-        label: Text("Start"),
+        label: Text("Scan"),
         foregroundColor: Colors.white,
         backgroundColor: Color(0xfff7941d),
+      ),
+    );
+  }
+
+  notscanyet() {
+    return Container(
+      child: Center(
+        child: Text("Choose a lung x-ray photo to get started."),
       ),
     );
   }

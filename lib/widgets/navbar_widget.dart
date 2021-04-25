@@ -1,19 +1,19 @@
 import 'package:circular_bottom_navigation/tab_item.dart';
 import 'package:flutter/material.dart';
-import 'package:lungs_pneumonia/screens/contact_page.dart';
-import 'package:lungs_pneumonia/screens/home_page.dart';
-import 'package:lungs_pneumonia/screens/scan_lungs.dart';
+import 'package:lungs_pneumonia/screens/navbar_contact_screen.dart';
+import 'package:lungs_pneumonia/screens/navbar_home_screen.dart';
+import 'package:lungs_pneumonia/screens/navbar_scan_screen.dart';
 import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
 
-class TestProcess extends StatefulWidget {
-  TestProcess({Key key, this.title}) : super(key: key);
+class NavbarPage extends StatefulWidget {
+  NavbarPage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
-  _TestProcessState createState() => _TestProcessState();
+  _NavbarPageState createState() => _NavbarPageState();
 }
 
-class _TestProcessState extends State<TestProcess> {
+class _NavbarPageState extends State<NavbarPage> {
   int selectedPos = 0;
   double bottomNavBarHeight = 60;
 
@@ -24,9 +24,15 @@ class _TestProcessState extends State<TestProcess> {
   }
 
   List<TabItem> tabItems = List.of([
-    new TabItem(Icons.home, "Home", Color(0xfff7941d)),
-    new TabItem(Icons.search, "Select Photo", Color(0xfff7941d)),
-    new TabItem(Icons.info, "About", Color(0xfff7941d)),
+    new TabItem(Icons.home, "Home", Color(0xfff7941d),
+        labelStyle:
+            const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+    new TabItem(Icons.remove_red_eye, "Scan", Color(0xfff7941d),
+        labelStyle:
+            const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+    new TabItem(Icons.info, "Contact", Color(0xfff7941d),
+        labelStyle:
+            const TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
   ]);
 
   CircularBottomNavigationController _navigationController;
@@ -49,10 +55,10 @@ class _TestProcessState extends State<TestProcess> {
   bodyContainer() {
     switch (selectedPos) {
       case 0:
-        return homePage();
+        return homePage(context);
         break;
       case 1:
-        return OpenGallery();
+        return ScanPage();
         break;
       case 2:
         return contactPage(context);
@@ -65,7 +71,7 @@ class _TestProcessState extends State<TestProcess> {
       tabItems,
       controller: _navigationController,
       barHeight: bottomNavBarHeight,
-      barBackgroundColor: Colors.white,
+      barBackgroundColor: Colors.orange,
       animationDuration: Duration(milliseconds: 300),
       selectedCallback: (int selectedPos) {
         setState(() {

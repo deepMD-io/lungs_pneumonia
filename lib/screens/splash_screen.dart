@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'launch_page.dart';
+import '../widgets/navbar_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -12,7 +12,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 2), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => NavbarPage()));
     });
   }
 

@@ -11,7 +11,7 @@ siteyeGit(url) async {
 mailGonder() async {
   var url = 'mailto:' +
       'info@yazilimkaravani.net' +
-      '?subject=SUPPORT | Insta Downloader&body=';
+      '?subject=SUPPORT | Pneumonia Detection&body=';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
