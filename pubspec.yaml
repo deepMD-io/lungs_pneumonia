@@ -1,6 +1,6 @@
 name: lungs_pneumonia
 description: A Mobile Application Developed for Diagnosis of Lungs Pneumonia
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -9,7 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
   path_provider: ^1.6.1
-#  cupertino_icons: ^0.1.2
+  cupertino_icons: ^0.1.2
   tflite: ^1.0.4
   image_picker: ^0.6.2+3
   image: ^2.1.4

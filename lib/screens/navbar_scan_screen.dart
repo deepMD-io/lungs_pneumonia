@@ -145,6 +145,7 @@ class _ScanPageState extends State<ScanPage> {
     await Tflite.loadModel(
       model: "assets/tflite/model_unquant2.tflite",
       labels: "assets/tflite/labels2.txt",
+      isAsset: true,
     );
   }
 }
